@@ -25,7 +25,7 @@ public:
         prev = curr;
         curr = forward;
     }
-    head = prev;
-    return head;
+    // head = prev;
+    return prev;
     }
 };
