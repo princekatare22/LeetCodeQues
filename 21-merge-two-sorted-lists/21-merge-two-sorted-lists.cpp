@@ -10,6 +10,74 @@
  */
 class Solution {
 public:
+    ListNode* mergeList(ListNode* first, ListNode* second)
+    {
+        if(first->next == NULL)
+        {
+            first->next = second;
+            return first;
+        }
+        ListNode* currOne = first;
+        ListNode* nextOne = first->next;
+        ListNode* currTwo = second;
+        ListNode* nextTwo = second->next;
+        
+        while(currOne != NULL && currTwo != NULL)
+        {
+            if((currTwo->val >=  currOne->val) &&
+               (currTwo->val <=  nextOne->val))
+            {
+                currOne->next = currTwo;
+                nextTwo = currTwo->next;
+                currTwo->next = nextOne;
+                
+                currOne = currTwo;
+                currTwo = nextTwo;
+            }
+            else
+            {
+                currOne = nextOne;
+                nextOne = nextOne->next;
+                if(nextOne == NULL)
+                {
+                    currOne->next = currTwo;
+                    return first;
+                }
+            }
+            
+        }
+        return first;
+    }
+    
+    
+    
+    
+    
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(list1 == NULL)
+            return list2;
+        if(list2 == NULL)
+            return list1;
+        
+        if(list1->val <= list2->val)
+        {
+            return mergeList(list1,list2);
+        }
+        else
+        {
+            return mergeList(list2,list1);
+        }
+    }
+};
+
+
+
+
+
+
+/*merging both array in one using another head pointer
+class Solution {
+public:
     void insertAttail(ListNode* &tail , ListNode* curr)
     {
         tail->next = curr;
@@ -50,3 +118,4 @@ public:
         return currHead->next;
     }
 };
+*/
