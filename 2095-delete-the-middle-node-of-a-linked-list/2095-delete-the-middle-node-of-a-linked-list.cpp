@@ -27,6 +27,7 @@ public:
         if(slow == head)
         {
             head = NULL;
+            delete slow;
             return head;
         }
         prev->next = slow->next;
