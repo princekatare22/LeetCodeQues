@@ -8,8 +8,15 @@
  */
 class Solution {
 public:
+//     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+//         if(headA == NULL || headB == NULL)
+//             return NULL;
+        
+//         unoredered_map <Node *,Node *>
+// };
+
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        if(headA == NULL || headB == NULL)
+        if(headA == NULL && headB == NULL)
             return NULL;
         
         ListNode * curr1 = headA;
