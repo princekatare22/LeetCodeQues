@@ -34,7 +34,7 @@ public:
             }
             else
             {
-                visited[curr2] == true;
+                visited[curr2] = true;
             }
             curr2 = curr2->next;
         }
@@ -43,24 +43,29 @@ public:
         
 };
 
-//     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-//         if(headA == NULL && headB == NULL)
-//             return NULL;
+//with O(n2) complexity
+/*
+
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        if(headA == NULL && headB == NULL)
+            return NULL;
         
-//         ListNode * curr1 = headA;
-//         ListNode * curr2 = headB;
+        ListNode * curr1 = headA;
+        ListNode * curr2 = headB;
         
-//         while(curr1 != NULL)
-//         {
-//             curr2 = headB;
-//             while(curr2 != NULL)
-//             {
-//                 if(curr1 == curr2)
-//                     return curr1;
-//                 curr2 = curr2->next;
-//             }
-//             curr1= curr1->next;
-//         }
-//         return NULL;
-//     }
-// };
+        while(curr1 != NULL)
+        {
+            curr2 = headB;
+            while(curr2 != NULL)
+            {
+                if(curr1 == curr2)
+                    return curr1;
+                curr2 = curr2->next;
+            }
+            curr1= curr1->next;
+        }
+        return NULL;
+    }
+};
+
+*/
